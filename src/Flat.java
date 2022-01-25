@@ -2,11 +2,43 @@ public class Flat {
 
     public final int defaultRoomCount = 2;
     public final int defaultFlatArea = 50;
-    public int roomCount;
-    public int flatArea;
-    public static int flatCount;
+    public int roomCount = 0;
+    public int flatArea = 0;
+    public static int flatCount = 0;
     public static int totalFlatArea;
     public static int totalRoomCount;
+
+    public static int getTotalFlatArea() {
+        return totalFlatArea;
+    }
+
+    public static int getTotalRoomCount() {
+        return totalRoomCount;
+    }
+
+    public Flat(int flatArea) {
+        this.flatArea = flatArea;
+        roomCount = defaultRoomCount;
+        totalRoomCount += roomCount;
+        totalFlatArea += flatArea;
+        flatCount++;
+    }
+
+    public Flat() {
+        roomCount = defaultRoomCount;
+        flatArea = defaultFlatArea;
+        totalRoomCount += roomCount;
+        totalFlatArea += flatArea;
+        flatCount++;
+    }
+
+    public Flat(int flatArea, int roomCount) {
+        this.flatArea = flatArea;
+        this.roomCount = roomCount;
+        totalFlatArea += flatArea;
+        totalRoomCount += roomCount;
+        flatCount++;
+    }
 
     public int getRoomCount() {
         return roomCount;
